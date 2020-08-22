@@ -1,17 +1,23 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header>
-        <p> About me </p>
-        <p> Projects </p>
-        <p> Skills </p>
-      </header>
-    </div>
-  );
+    return (
+        <div className="container clearfix">
+            <header>
+                <a className="header-logo" href=""> &lt;viniciuslazzari	/&gt; </a>
+
+                <nav className="header-links">
+                    <ul>
+                        <li><a href="#about"> About me </a></li>
+                        <li><a href="#skills"> Skills </a></li>
+                        <li><a href="#projects"> Projects </a></li>
+                        <li><a href="#contact"> Contact me </a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    );
 }
 
 export default App;
