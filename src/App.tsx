@@ -5,7 +5,10 @@ function App() {
     return (
         <div className="container clearfix">
             <header>
-                <a className="header-logo" href=""> &lt;viniciuslazzari	/&gt; </a>
+                <nav className="header-buttons">
+                    <button className="theme-button"> <img className="theme-icon" src="/sun-icon.svg"></img> </button>
+                    <button className="language-button"> <img className="language-icon" src="/brasil-icon.svg"></img> </button>
+                </nav>
 
                 <nav className="header-links">
                     <ul>

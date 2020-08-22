@@ -48,15 +48,41 @@ header {
   font-size: 1.6em;
 }
 
-.header-logo {
+.header-buttons {
   font-weight: 700;
   color: #000;
-  padding: 13px 25px;
   height: 100%;
   float: left;
 }
 
+.header-buttons button {
+  background-color: #fff;
+  border: none;
+  height: inherit;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.theme-button {
+  float: left;
+}
+
+.theme-button img {
+  vertical-align: middle;
+  height: 27px;
+}
+
+.language-button {
+  float: right;
+}
+
+.language-button img {
+  vertical-align: middle;
+  height: 33px;
+}
+
 .header-links {
+  float: right;
   height: 100%;
 }
 
