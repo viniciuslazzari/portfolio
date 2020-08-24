@@ -3,15 +3,19 @@ import { ThemeProvider } from "styled-components";
 
 import GlobalStyle from "./styles/global";
 import "./styles/index.css";
+
 import light from "./styles/themes/light";
 import dark from "./styles/themes/dark";
 
-interface IProps {
-}
+import en_uk from "./lang/en-uk.json";
+import pt_pt from "./lang/pt-pt.json";
+import pt_br from "./lang/pt-br.json";
+
+interface IProps { }
 
 interface IState {
-    theme: any;
-    themeIcon: string;
+    theme: typeof light;
+    language: typeof en_uk;
 }
 
 class App extends React.Component<IProps, IState> {
@@ -19,58 +23,63 @@ class App extends React.Component<IProps, IState> {
         super(props);
 
         this.state = {
-            theme: null,
-            themeIcon: ""
+            theme: light,
+            language: en_uk,
         };
     }
 
-    sunIcon = "/icons/theme/sun.svg";
-    moonIcon = "/icons/theme/moon.svg";
-    brazilIcon = "/icons/lang/brazil.svg";
-
-    getDefaultTheme() {
-        const storageitem = localStorage.getItem("theme");
-
-        storageitem ? this.setState({ theme: JSON.parse(storageitem) }) : this.setState({ theme: light });
-    }
+    languages = [en_uk, pt_pt, pt_br];
+    themes = [light, dark]
 
     async componentWillMount() {
-        await this.getDefaultTheme();
+        let storageTheme = await localStorage.getItem("themeTitle");
+        if (storageTheme) {
+            let updatedTheme = this.themes.filter(theme => { return theme.title === storageTheme })[0];
 
-        this.state.theme.title === "light" ? this.setState({ themeIcon: this.sunIcon }) : this.setState({ themeIcon: this.moonIcon });
+            this.setState({ theme: updatedTheme });
+        }
+
+        let storageLanguage = await localStorage.getItem("languageTitle");
+        if (storageLanguage) {
+            let updatedLanguage = this.languages.filter(language => { return language.title === storageLanguage })[0];
+
+            this.setState({ language: updatedLanguage });
+        }
     }
 
     toggleTheme = () => {
-        if (this.state.theme.title === "light") {
-            this.setState({ theme: dark }, () => {
-                localStorage.setItem("theme", JSON.stringify(this.state.theme));
-                this.setState({ themeIcon: this.moonIcon });
-            })
-        } else {
-            this.setState({ theme: light }, () => {
-                localStorage.setItem("theme", JSON.stringify(this.state.theme));
-                this.setState({ themeIcon: this.sunIcon });
-            })
-        };
+        let updatedTheme = this.themes.filter(theme => { return theme.title === this.state.theme.nextTheme })[0];
+
+        localStorage.setItem("themeTitle", updatedTheme.title);
+        this.setState({ theme: updatedTheme });
+    }
+
+    toggleLanguage = () => {
+        let updatedLanguage = this.languages.filter(language => { return language.title === this.state.language.nextLanguage })[0];
+
+        localStorage.setItem("languageTitle", updatedLanguage.title);
+        this.setState({ language: updatedLanguage });
     }
 
     render() {
+        const language = this.state.language;
+
         return (
             <ThemeProvider theme={this.state.theme} >
+                <GlobalStyle />
                 <div className="container clearfix">
-                    <GlobalStyle />
                     <header>
                         <nav className="header-buttons">
-                            <button onClick={this.toggleTheme} className="theme-button"> <img className="theme-icon" alt="" src={this.state.themeIcon}></img> </button>
-                            <button className="language-button"> <img className="language-icon" alt="" src={this.brazilIcon}></img> </button>
+                            <button onClick={this.toggleTheme} className="theme-button"> <img className="theme-icon" alt="" src={this.state.theme.icon}></img> </button>
+                            <button onClick={this.toggleLanguage} className="language-button"> <img className="language-icon" alt="" src={this.state.language.icon}></img> </button>
                         </nav>
 
                         <nav className="header-links">
                             <ul>
-                                <li><a href="#about"> About me </a></li>
-                                <li><a href="#skills"> Skills </a></li>
-                                <li><a href="#projects"> Projects </a></li>
-                                <li><a href="#contact"> Contact me </a></li>
+                                <li><a href="#about"> {language.header.about} </a></li>
+                                <li><a href="#skills"> {language.header.skills} </a></li>
+                                <li><a href="#projects"> {language.header.projects} </a></li>
+                                <li><a href="#contact"> {language.header.contact} </a></li>
                             </ul>
                         </nav>
                     </header>

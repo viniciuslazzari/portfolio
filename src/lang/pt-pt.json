@@ -1,0 +1,12 @@
+{
+  "title": "pt-pt",
+  "icon": "/icons/lang/portugal.svg",
+  "nextLanguage": "pt-br",
+
+  "header": {
+    "about": "Sobre mim",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato"
+  }
+}
