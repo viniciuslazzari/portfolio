@@ -6,6 +6,8 @@ export default createGlobalStyle`
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     text-decoration: none;
+    margin: 0px;
+    padding: 0px;
 }
 
 .clearfix:before, .clearfix:after {
@@ -29,11 +31,24 @@ body {
     background: ${(props) => props.theme.colors.background};
 }
 
+
 .header-buttons button {
     background-color: ${(props) => props.theme.colors.background};
 }
 
+p {
+    color: ${(props) => props.theme.colors.text};
+}
+
+.first-section-title{
+    background: linear-gradient(to right, ${(props) => props.theme.colors.initialDegrade}, ${(props) => props.theme.colors.finalDegrade});
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .header-links ul li a {
-    color: ${(props) => props.theme.colors.text}
+    background: linear-gradient(to right, ${(props) => props.theme.colors.initialDegrade}, ${(props) => props.theme.colors.finalDegrade});
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 `;

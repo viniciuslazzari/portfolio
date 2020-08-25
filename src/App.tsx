@@ -32,6 +32,7 @@ class App extends React.Component<IProps, IState> {
     themes = [light, dark]
 
     async componentWillMount() {
+        console.log(this.state.theme)
         let storageTheme = await localStorage.getItem("themeTitle");
         if (storageTheme) {
             let updatedTheme = this.themes.filter(theme => { return theme.title === storageTheme })[0];
@@ -65,13 +66,17 @@ class App extends React.Component<IProps, IState> {
         const language = this.state.language;
 
         return (
-            <ThemeProvider theme={this.state.theme} >
+            < ThemeProvider theme={this.state.theme} >
                 <GlobalStyle />
                 <div className="container clearfix">
                     <header>
                         <nav className="header-buttons">
-                            <button onClick={this.toggleTheme} className="theme-button"> <img className="theme-icon" alt="" src={this.state.theme.icon}></img> </button>
-                            <button onClick={this.toggleLanguage} className="language-button"> <img className="language-icon" alt="" src={this.state.language.icon}></img> </button>
+                            <button onClick={this.toggleTheme} className="theme-button"> <img className="theme-icon" alt="" src={this.state.theme.icon}></img></button>
+                            {this.state.theme.title === "light" ?
+                                <button onClick={this.toggleLanguage} className="language-button"> <img className="language-icon" alt="" src={this.state.language.lightThemeIcon}></img> </button>
+                                :
+                                <button onClick={this.toggleLanguage} className="language-button"> <img className="language-icon" alt="" src={this.state.language.darkThemeIcon}></img> </button>
+                            }
                         </nav>
 
                         <nav className="header-links">
@@ -83,8 +88,20 @@ class App extends React.Component<IProps, IState> {
                             </ul>
                         </nav>
                     </header>
+
+                    <div className="site-sections">
+                        <div className="first-section">
+                            <div className="first-section-label">
+                                <p className="first-section-title"> Hi, I'm Vinícius and i like to code very much </p>
+                                <p className="first-section-description"> Programmer | Web Developer | Data Science Beginner </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer>
+                    </footer>
                 </div>
-            </ThemeProvider>
+            </ThemeProvider >
         );
     }
 }

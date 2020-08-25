@@ -1,6 +1,7 @@
 {
   "title": "pt-pt",
-  "icon": "/icons/lang/portugal.svg",
+  "lightThemeIcon": "/icons/lang/light/portugal.svg",
+  "darkThemeIcon": "/icons/lang/dark/portugal.svg",
   "nextLanguage": "pt-br",
 
   "header": {

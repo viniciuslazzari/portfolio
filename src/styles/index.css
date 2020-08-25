@@ -35,8 +35,8 @@ header {
 }
 
 .theme-button img {
-  vertical-align: middle;
   height: 25px;
+  vertical-align: middle;
 }
 
 .language-button {
@@ -45,7 +45,7 @@ header {
 
 .language-button img {
   vertical-align: middle;
-  height: 35px;
+  height: 40px;
 }
 
 .header-links {
@@ -57,8 +57,6 @@ header {
   height: inherit;
   float: right !important;
   margin: 0 auto;
-  padding: 0px;
-  margin: 0px;
   list-style: none;
 }
 
@@ -67,6 +65,34 @@ header {
 }
 
 .header-links ul li a {
+  font-weight: 700;
   padding: 13px 25px;
   display: inline-block;
+}
+
+.first-section {
+  justify-content: center;
+  height: 607px;
+}
+
+.first-section-title {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 3.8em;
+}
+
+.first-section-description {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 3em;
+}
+
+.first-section-label {
+  margin-top: 200px;
+  margin-left: 2em;
+  margin-right: 2em;
 }
