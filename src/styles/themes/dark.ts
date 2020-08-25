@@ -6,7 +6,7 @@ export default {
     colors: {
         background: "#222",
         text: "#fff",
-        initialDegrade: "#80d8ff",
-        finalDegrade: "#e981fc",
+        initialDegrade: "#FFD700",
+        finalDegrade: "#FAFAD2"
     },
 };

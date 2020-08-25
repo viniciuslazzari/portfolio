@@ -70,6 +70,15 @@ header {
   display: inline-block;
 }
 
+.header-links ul li a:hover {
+  animation: resizeLink 10s linear infinite;
+  @keyframes resizeLink {
+    to {
+      font-size: 1.8em;
+    }
+  }
+}
+
 .first-section {
   justify-content: center;
   height: 607px;
@@ -80,8 +89,7 @@ header {
   margin: 0 auto;
   text-align: center;
   margin-bottom: 20px;
-  font-weight: 700;
-  font-size: 3.8em;
+  font-size: 4.5em;
 }
 
 .first-section-description {
