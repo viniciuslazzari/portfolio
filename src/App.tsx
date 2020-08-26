@@ -32,7 +32,6 @@ class App extends React.Component<IProps, IState> {
     themes = [light, dark]
 
     async componentWillMount() {
-        console.log(this.state.theme)
         let storageTheme = await localStorage.getItem("themeTitle");
         if (storageTheme) {
             let updatedTheme = this.themes.filter(theme => { return theme.title === storageTheme })[0];
@@ -92,14 +91,21 @@ class App extends React.Component<IProps, IState> {
                     <div className="site-sections">
                         <div className="first-section">
                             <div className="first-section-label">
-                                <p className="first-section-title"> Hi, I'm Vinícius and i like to code very much </p>
-                                <p className="first-section-description"> Programmer | Web Developer | Data Science Beginner </p>
+                                <p className="first-section-title"> Vinícius Lazzari </p>
+                                <p className="first-section-description"> {language.firstSection.subtitle} </p>
+
+                                <div className="first-section-icons">
+                                    <img alt="" src={this.state.theme.paths.social.github}></img>
+                                    <img alt="" src={this.state.theme.paths.social.linkedin}></img>
+                                    <img alt="" src={this.state.theme.paths.social.facebook}></img>
+                                    <img alt="" src={this.state.theme.paths.social.discord}></img>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <footer>
-                    </footer>
+                        <footer>
+                        </footer>
+                    </div>
                 </div>
             </ThemeProvider >
         );

@@ -9,5 +9,9 @@
     "skills": "Habilidades",
     "projects": "Projetos",
     "contact": "Contato"
+  },
+
+  "firstSection": {
+    "subtitle": "Programador | Desenvolvedor Web | Iniciante em Ciência de Dados"
   }
 }

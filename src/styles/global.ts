@@ -40,14 +40,6 @@ p {
     color: ${(props) => props.theme.colors.text};
 }
 
-.css-selector {
-    background: linear-gradient(270deg, #36d1dc, #e55d5d);
-    background-size: 400% 400%;
-
-    -webkit-animation: AnimationName 59s ease infinite;
-    animation: AnimationName 59s ease infinite;
-}
-
 .first-section-title{
     background: linear-gradient(to right, ${(props) => props.theme.colors.initialDegrade}, ${(props) => props.theme.colors.finalDegrade}, ${(props) => props.theme.colors.initialDegrade});
     -webkit-background-clip: text;

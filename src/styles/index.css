@@ -89,18 +89,30 @@ header {
   margin: 0 auto;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 4.5em;
+  font-size: 8em;
 }
 
 .first-section-description {
   display: table;
   margin: 0 auto;
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
+  margin-bottom: 40px;
 }
 
 .first-section-label {
-  margin-top: 200px;
+  margin-top: 170px;
   margin-left: 2em;
   margin-right: 2em;
+}
+
+.first-section-icons {
+  display: table;
+  margin: 0 auto;
+}
+
+.first-section-icons img {
+  vertical-align: middle;
+  padding: 0px 15px;
+  height: 40px;
 }

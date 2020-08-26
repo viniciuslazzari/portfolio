@@ -9,5 +9,9 @@
     "skills": "Skills",
     "projects": "Projects",
     "contact": "Contact me"
+  },
+
+  "firstSection": {
+    "subtitle": "Programmer | Web Developer | Data Science Beginner"
   }
 }
