@@ -1,7 +1,6 @@
 {
   "title": "en-uk",
-  "lightThemeIcon": "/icons/lang/light/uk.svg",
-  "darkThemeIcon": "/icons/lang/dark/uk.svg",
+  "icon": "./public/icons/lang/uk.svg",
   "nextLanguage": "pt-pt",
 
   "header": {

@@ -6,18 +6,9 @@ declare module "styled-components" {
         icon: string;
         nextTheme: string;
 
-        paths: {
-            social: {
-                github: string;
-                linkedin: string;
-                facebook: string;
-                discord: string;
-            }
-        }
-
         colors: {
             background: string;
-            text: string;
+            primary: string;
             initialDegrade: string;
             finalDegrade: string;
         };
