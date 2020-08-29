@@ -1,7 +1,6 @@
 body {
   border: 1px solid red;
   width: 100%;
-  font-size: 62.5%;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -9,6 +8,18 @@ body {
   border: 1px solid red;
   width: 80vw;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  body {
+    font-size: 62.5%;
+  }
 }
 
 @media screen and (max-width: 840px) {
@@ -32,50 +43,37 @@ header {
   height: 7vh;
   margin-top: 3vh;
   margin-bottom: 3vh;
-  font-size: 1.6em;
 }
 
 .header-buttons {
+  align-items: center;
   display: flex;
-  vertical-align: middle;
-  font-weight: 700;
   height: 100%;
   float: left;
 }
 
 .header-buttons button {
   outline: none;
-  border: none;
+  margin-right: 2em;
+  margin-left: 2em;
 }
 
 .theme-button {
-  height: 100%;
+  border: 1px solid red;
   float: left;
-}
-
-.theme-button :first-child {
-  height: 2em;
-  width: 2em;
-  margin-left: 25px;
-  margin-right: 25px;
-  vertical-align: middle;
+  height: 2.5em;
+  width: 2.5em;
 }
 
 .language-button {
-  height: 100%;
+  border: 1px solid red;
   float: right;
-}
-
-.language-button :first-child {
-  display: inline-block;
-  height: 2em;
-  width: 3em;
-  margin-left: 25px;
-  margin-right: 25px;
-  vertical-align: middle;
+  height: 2.5em;
+  width: 3.7em;
 }
 
 .big-header-links {
+  font-size: 1.6em;
   float: right;
   height: 100%;
 }
@@ -108,15 +106,15 @@ header {
   margin: 0 auto;
   text-align: center;
   margin-bottom: 20px;
-  font-size: 6vw;
+  font-size: 9em;
 }
 
 .first-section-description {
   display: table;
   margin: 0 auto;
   text-align: center;
-  font-size: 1.5vw;
-  margin-bottom: 40px;
+  font-size: 2.3em;
+  margin-bottom: 2em;
 }
 
 .first-section-label {
@@ -133,10 +131,10 @@ header {
 
 .first-section-icons svg {
   vertical-align: middle;
-  height: 40px;
-  width: 40px;
-  margin-left: 15px;
-  margin-right: 15px;
+  height: 4em;
+  width: 4em;
+  margin-left: 2em;
+  margin-right: 2em;
 }
 
 .second-section {
