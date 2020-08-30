@@ -4,6 +4,7 @@ import GlobalStyle from "./styles/global";
 import "./styles/index.css";
 import light from "./styles/themes/light";
 import dark from "./styles/themes/dark";
+import { slide as Menu } from 'react-burger-menu'
 
 import { SunIcon } from './public/icons/theme/sun.jsx';
 import { MoonIcon } from './public/icons/theme/moon.jsx';
@@ -24,6 +25,7 @@ import pt_br from "./lang/pt-br.json";
 interface IProps { }
 
 interface IState {
+    hamburguerMenu: boolean;
     theme: typeof light;
     language: typeof en_uk;
 }
@@ -33,6 +35,7 @@ class App extends React.Component<IProps, IState> {
         super(props);
 
         this.state = {
+            hamburguerMenu: false,
             theme: light,
             language: en_uk,
         };
@@ -100,13 +103,12 @@ class App extends React.Component<IProps, IState> {
                         </nav>
 
                         <nav className="small-header-links">
-                            <form>
-                                <select name="URL">
-                                    <option value="blog.html">My Blog</option>
-                                    <option value="home.html">My Home Page</option>
-                                    <option value="tutorials.html">My Tutorials</option>
-                                </select>
-                            </form>
+                            <Menu>
+                                <a id="home" className="menu-item" href="/">Home</a>
+                                <a id="about" className="menu-item" href="/about">About</a>
+                                <a id="contact" className="menu-item" href="/contact">Contact</a>
+                                <a className="menu-item--small" href="">Settings</a>
+                            </Menu>
                         </nav>
 
                         <nav className="big-header-links">

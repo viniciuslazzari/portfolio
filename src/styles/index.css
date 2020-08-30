@@ -26,16 +26,20 @@ body {
   .big-header-links {
     display: none;
   }
+
+  .small-header-links {
+    display: flex;
+  }
 }
 
 @media screen and (min-width: 840px) {
   .big-header-links {
     display: flex;
   }
-}
 
-.small-header-links {
-  display: none;
+  .small-header-links {
+    display: none;
+  }
 }
 
 header {
@@ -54,19 +58,18 @@ header {
 
 .header-buttons button {
   outline: none;
+  border: 1px solid red;
   margin-right: 2em;
   margin-left: 2em;
 }
 
 .theme-button {
-  border: 1px solid red;
   float: left;
   height: 2.5em;
   width: 2.5em;
 }
 
 .language-button {
-  border: 1px solid red;
   float: right;
   height: 2.5em;
   width: 3.7em;
@@ -76,6 +79,19 @@ header {
   font-size: 1.6em;
   float: right;
   height: 100%;
+}
+
+.bm-burger-button {
+  float: right;
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+.bm-burger-bars {
+  background: white;
 }
 
 .big-header-links ul {
