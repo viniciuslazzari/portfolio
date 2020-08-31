@@ -37,7 +37,7 @@ body {
     background: ${(props) => props.theme.colors.background};
 }
 
-header svg {
+.header-buttons svg {
     fill: ${(props) => props.theme.colors.primary}; 
 }
 
@@ -45,7 +45,7 @@ header svg {
     fill: ${(props) => props.theme.colors.primary};
 }
 
-.header-buttons button {
+header button {
     background-color: ${(props) => props.theme.colors.background};
 }
 

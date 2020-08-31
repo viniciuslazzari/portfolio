@@ -4,7 +4,6 @@ import GlobalStyle from "./styles/global";
 import "./styles/index.css";
 import light from "./styles/themes/light";
 import dark from "./styles/themes/dark";
-import { slide as Menu } from 'react-burger-menu'
 
 import { SunIcon } from './public/icons/theme/sun.jsx';
 import { MoonIcon } from './public/icons/theme/moon.jsx';
@@ -17,6 +16,8 @@ import { GithubIcon } from './public/icons/social/github.jsx';
 import { LinkedinIcon } from './public/icons/social/linkedin.jsx';
 import { FacebookIcon } from './public/icons/social/facebook.jsx';
 import { DiscordIcon } from './public/icons/social/discord.jsx';
+
+import { BurguerIcon } from './public/icons/menu/burguer.jsx';
 
 import en_uk from "./lang/en-uk.json";
 import pt_pt from "./lang/pt-pt.json";
@@ -103,12 +104,7 @@ class App extends React.Component<IProps, IState> {
                         </nav>
 
                         <nav className="small-header-links">
-                            <Menu>
-                                <a id="home" className="menu-item" href="/">Home</a>
-                                <a id="about" className="menu-item" href="/about">About</a>
-                                <a id="contact" className="menu-item" href="/contact">Contact</a>
-                                <a className="menu-item--small" href="">Settings</a>
-                            </Menu>
+                            <button className="burguer-menu"> <BurguerIcon /> </button>
                         </nav>
 
                         <nav className="big-header-links">
